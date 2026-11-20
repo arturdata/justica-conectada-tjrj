@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Justiça Conectada – Inclusão Digital TJ-RJ</title>
+  <style>
+    :root {
+      --bg-color: #f4f6f9;
+      --card-bg: #ffffff;
+      --text-color: #1a202c;
+      --primary-color: #0b3b60;
+      --accent-color: #1d6fa5;
+      --border-color: #cbd5e0;
+      --font-size-base: 18px;
+    }
+
+    body.high-contrast {
+      --bg-color: #000000;
+      --card-bg: #121212;
+      --text-color: #ffff00;
+      --primary-color: #ffff00;
+      --accent-color: #00ffff;
+      --border-color: #ffff00;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-size: var(--font-size-base);
+      line-height: 1.6;
+      transition: all 0.2s ease;
+    }
+
+    /* Barra de Acessibilidade (Desenho Universal) */
+    .accessibility-bar {
+      background-color: #111827;
+      color: #ffffff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .accessibility-bar button {
+      background-color: #ffffff;
+      color: #111827;
+      border: 2px solid #ffffff;
+      padding: 6px 14px;
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .accessibility-bar button:hover {
+      background-color: #e2e8f0;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      padding: 36px 20px;
+      text-align: center;
+      border-bottom: 4px solid var(--accent-color);
+    }
+
+    body.high-contrast header {
+      background-color: #000000;
+      color: #ffff00;
+    }
+
+    header h1 {
+      font-size: 1.9em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      max-width: 780px;
+      margin: 0 auto;
+      font-size: 1.05em;
+    }
+
+    .badges {
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background-color: rgba(255, 255, 255, 0.18);
+      border: 1px solid #ffffff;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85em;
+      font-weight: bold;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border: 2px solid var(--border-color);
+      border-radius: 10px;
+      padding: 26px;
+      margin-bottom: 24px;
+    }
+
+    .card h2 {
+      color: var(--primary-color);
+      font-size: 1.4em;
+      margin-bottom: 12px;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 8px;
+    }
+
+    .steps {
+      margin: 14px 0 18px 22px;
+    }
+
+    .steps li {
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 12px 22px;
+      border-radius: 8px;
+      border: 2px solid transparent;
+      font-size: 1em;
+    }
+
+    body.high-contrast .btn {
+      background-color: #ffff00;
+      color: #000000;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .feedback-box {
+      text-align: center;
+      border: 3px solid var(--accent-color);
+    }
+
+    .btn-feedback {
+      background-color: #15803d;
+      font-size: 1.1em;
+      padding: 15px 28px;
+      margin-top: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 0.9em;
+      border-top: 1px solid var(--border-color);
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Controles de Acessibilidade - Desenho Universal -->
+  <div class="accessibility-bar" role="region" aria-label="Opções de acessibilidade">
+    <button type="button" onclick="changeFontSize(2)">A+ Aumentar Texto</button>
+    <button type="button" onclick="changeFontSize(-2)">A- Diminuir Texto</button>
+    <button type="button" onclick="toggleContrast()">Alto Contraste</button>
+  </div>
+
+  <header>
+    <h1>Justiça Conectada</h1>
+    <p>Guia Digital Simplificado para Acesso aos Serviços Online do Tribunal de Justiça do Estado do Rio de Janeiro (TJ-RJ)</p>
+    <div class="badges">
+      <span class="badge">Inclusão Digital – Pavuna / RJ</span>
+      <span class="badge">ODS 10 – Redução das Desigualdades</span>
+      <span class="badge">ODS 16 – Paz, Justiça e Instituições Eficazes</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Sobre o Projeto</h2>
+      <p>
+        Muitos cidadãos perdem tempo e dinheiro indo presencialmente ao Fórum apenas para saber o andamento de um processo ou tirar uma certidão simples. Este portal foi desenvolvido com base nos <strong>7 Princípios do Desenho Universal</strong> para ensinar, de forma direta e acessível, como utilizar os serviços digitais gratuitos do TJ-RJ pelo celular ou computador.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>1. Como Consultar um Processo Online</h2>
+      <ol class="steps">
+        <li>Acesse o portal oficial de consultas do TJ-RJ pelo botão abaixo.</li>
+        <li>Escolha a opção <strong>Por Número</strong> (caso tenha o número completo do processo) ou <strong>Por Nome</strong> (informando seu nome completo e a comarca, como Capital/Pavuna).</li>
+        <li>Selecione a instância (geralmente <strong>1ª Instância</strong> ou <strong>Juizados Especiais</strong>) e digite os caracteres de segurança exibidos na tela.</li>
+        <li>Clique em <strong>Pesquisar</strong> para visualizar todas as movimentações recentes sem sair de casa.</li>
+      </ol>
+      <a class="btn" href="https://www3.tjrj.jus.br/consultaprocessual/" target="_blank" rel="noopener noreferrer">Acessar Consulta Processual TJ-RJ</a>
+    </section>
+
+    <section class="card">
+      <h2>2. Como Emitir Certidões Online</h2>
+      <ol class="steps">
+        <li>Entre na página oficial de emissão de certidões eletrônicas do TJ-RJ.</li>
+        <li>Escolha o tipo de certidão desejada (ex.: Cível, Criminal ou de Distribuição).</li>
+        <li>Preencha corretamente seu <strong>CPF</strong>, <strong>Nome Completo</strong>, <strong>Data de Nascimento</strong> e <strong>Nome da Mãe</strong>.</li>
+        <li>Acompanhe o pedido pelo protocolo gerado e baixe o documento em PDF assim que for liberado.</li>
+      </ol>
+      <a class="btn" href="https://www.tjrj.jus.br/web/guest/servicos/certidoes" target="_blank" rel="noopener noreferrer">Acessar Portal de Certidões TJ-RJ</a>
+    </section>
+
+    <section class="card">
+      <h2>3. Atendimento pelo Balcão Virtual e Alertas por E-mail</h2>
+      <ol class="steps">
+        <li><strong>Acompanhamento por E-mail:</strong> No site do TJ-RJ, cadastre seu e-mail e o número do seu processo para receber avisos automáticos sempre que houver novidade.</li>
+        <li><strong>Balcão Virtual:</strong> Caso precise falar com um atendente da vara ou juizado sem ir ao Fórum da Pavuna, utilize o Balcão Virtual durante o horário de expediente (11h às 18h).</li>
+      </ol>
+      <a class="btn" href="https://www.tjrj.jus.br/balcao-virtual" target="_blank" rel="noopener noreferrer">Acessar Balcão Virtual TJ-RJ</a>
+    </section>
+
+    <section class="card feedback-box">
+      <h2>Avalie este Portal (Pesquisa de Extensão Universitária)</h2>
+      <p>
+        Você acessou este guia? Responda ao formulário rápido abaixo (leva menos de 1 minuto) para registrar sua participação e ajudar a validar este projeto acadêmico de inclusão digital.
+      </p>
+      <a class="btn btn-feedback" href="https://docs.google.com/forms/d/e/1FAIpQLSf3D5SnODabPYCUv8ckPXgIjQveu68RxBJLQXnCJAosUq1kFg/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">
+        Responder Formulário de Avaliação
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Projeto de Extensão:</strong> Justiça Conectada – Inclusão Digital para o Acesso aos Serviços do Tribunal de Justiça</p>
+    <p>Desenvolvido por <strong>Gabriel Artur Ramos de Oliveira</strong> | CST em Gestão da Tecnologia da Informação – UNINTER (2026)</p>
+  </footer>
+
+  <script>
+    let currentFontSize = 18;
+
+    function changeFontSize(step) {
+      currentFontSize += step;
+      if (currentFontSize < 14) currentFontSize = 14;
+      if (currentFontSize > 28) currentFontSize = 28;
+      document.documentElement.style.setProperty('--font-size-base', currentFontSize + 'px');
+    }
+
+    function toggleContrast() {
+      document.body.classList.toggle('high-contrast');
+    }
+  </script>
+</body>
+</html>
